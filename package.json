@@ -1,0 +1,24 @@
+{
+  "name": "minichat",
+  "version": "1.0.0",
+  "main": "./out/main/index.js",
+  "scripts": {
+    "dev": "electron-vite dev",
+    "build": "electron-vite build",
+    "download-models": "node scripts/download-models.mjs"
+  },
+  "build": {
+    "asarUnpack": ["node_modules/sherpa-onnx-node/**"]
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "devDependencies": {
+    "electron": "^41.1.1",
+    "electron-vite": "^3.1.0"
+  },
+  "dependencies": {
+    "sherpa-onnx-node": "^1.12.35"
+  }
+}

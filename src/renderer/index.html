@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MiniChat</title>
+  <link rel="stylesheet" href="./styles.css">
+</head>
+<body>
+  <div class="layout">
+    <!-- Main call area -->
+    <div class="container">
+      <button class="settings-btn" id="settingsBtn">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <circle cx="12" cy="12" r="3"/>
+          <path d="M19.4 15a1.65 1.65 0 00.33 1.82l.06.06a2 2 0 010 2.83 2 2 0 01-2.83 0l-.06-.06a1.65 1.65 0 00-1.82-.33 1.65 1.65 0 00-1 1.51V21a2 2 0 01-4 0v-.09A1.65 1.65 0 009 19.4a1.65 1.65 0 00-1.82.33l-.06.06a2 2 0 01-2.83-2.83l.06-.06A1.65 1.65 0 004.68 15a1.65 1.65 0 00-1.51-1H3a2 2 0 010-4h.09A1.65 1.65 0 004.6 9a1.65 1.65 0 00-.33-1.82l-.06-.06a2 2 0 012.83-2.83l.06.06A1.65 1.65 0 009 4.68a1.65 1.65 0 001-1.51V3a2 2 0 014 0v.09a1.65 1.65 0 001 1.51 1.65 1.65 0 001.82-.33l.06-.06a2 2 0 012.83 2.83l-.06.06A1.65 1.65 0 0019.4 9a1.65 1.65 0 001.51 1H21a2 2 0 010 4h-.09a1.65 1.65 0 00-1.51 1z"/>
+        </svg>
+      </button>
+
+      <div class="call-area">
+        <div class="ripple-container" id="rippleContainer">
+          <div class="ripple r1"></div>
+          <div class="ripple r2"></div>
+          <div class="ripple r3"></div>
+          <button class="call-btn" id="callBtn">
+            <svg width="40" height="40" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M12 15c1.66 0 2.99-1.34 2.99-3L15 6c0-1.66-1.34-3-3-3S9 4.34 9 6v6c0 1.66 1.34 3 3 3z"/>
+              <path d="M17.3 12c0 3-2.54 5.1-5.3 5.1S6.7 15 6.7 12H5c0 3.42 2.72 6.23 6 6.72V22h2v-3.28c3.28-.48 6-3.3 6-6.72h-1.7z"/>
+            </svg>
+          </button>
+        </div>
+        <p class="status-text" id="statusText">点击开始语音通话</p>
+        <p class="hint-text" id="hintText">按住空格键：按住说话</p>
+        <button class="stop-btn" id="stopBtn" style="display:none">停止回答</button>
+      </div>
+
+      <!-- Current subtitle (latest message) -->
+      <div class="subtitle-area" id="subtitleArea">
+        <div class="subtitle" id="subtitle"></div>
+      </div>
+    </div>
+
+    <!-- Chat history panel (right side, collapsible) -->
+    <div class="chat-panel" id="chatPanel">
+      <div class="chat-panel-header">
+        <span>聊天记录</span>
+        <button class="chat-panel-close" id="chatPanelClose">&times;</button>
+      </div>
+      <div class="chat-messages" id="chatMessages"></div>
+    </div>
+
+    <!-- Toggle button for chat panel -->
+    <button class="chat-toggle" id="chatToggle" title="聊天记录">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+        <path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z"/>
+      </svg>
+    </button>
+  </div>
+
+  <script type="module" src="./app.js"></script>
+</body>
+</html>
