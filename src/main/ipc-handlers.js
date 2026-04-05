@@ -118,6 +118,9 @@ export function registerIpcHandlers() {
       abortController.abort()
     }
     mainWindow?.webContents.send('audio:stop-playback')
+    // Transition state back (abort doesn't fire if we're already in 'speaking')
+    if (sessionMode === 'auto') setState('listening')
+    else setState('idle')
     return { ok: true }
   })
 
